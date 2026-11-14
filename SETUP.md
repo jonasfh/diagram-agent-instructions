@@ -12,10 +12,10 @@ This repository uses **self-bootstrapping** so diagramming works across projects
 - `render_py_diagram.py` calls `ensure_tools.py`, which:
   1. Checks if `diagrams` is importable in the active Python or creates an isolated venv at `~/.cache/diagram-agent-tools/venv` with `diagrams` installed.
   2. Checks if `dot` (Graphviz) is on `PATH`.
-- **If `dot` is missing**:
+- **If `dot` (or `python3-venv` on Debian/Ubuntu) is missing**:
   - On Debian/Ubuntu Linux:
     ```bash
-    sudo apt-get update && sudo apt-get install -y --no-install-recommends graphviz
+    sudo apt-get update && sudo apt-get install -y --no-install-recommends graphviz python3-venv
     ```
   - On macOS:
     ```bash
